@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:simpleType name="EmailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^\.]+\..+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="User">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Password" type="xs:string"/>
+                <xs:element name="Name"/>
+                <xs:element name="Surname"/>
+                <xs:element name="Email" type="EmailType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
